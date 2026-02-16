@@ -1,118 +1,109 @@
-<style>
-    :root {
-        --bg: #ffffff;
-        --text: #111827;
-        --gray: #6b7280;
-    }
+:root {
+    --bg: #ffffff;
+    --text: #111827;
+    --gray: #6b7280;
+}
 
-    /* Reset dasar agar tidak ada spasi bawaan browser */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        font-family: 'Inter', -apple-system, sans-serif;
-        background-color: var(--bg);
-        color: var(--text);
-        line-height: 1.7;
-    }
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
 
-    /* Container: Padding atas dibuat kecil (20px) agar Ahmad Zulpiqor naik */
-    .container {
-        max-width: 650px;
-        margin: 0 auto;
-        padding: 20px 20px;
-    }
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
 
-    header {
-        margin-bottom: 20px;
-    }
+header {
+    margin-bottom: 20px;
+}
 
-    /* Paksa navigasi rapat ke kiri */
-    nav {
-        display: flex;
-        justify-content: flex-start; 
-        align-items: center;
-        position: relative;
-        margin-bottom: 10px;
-    }
+nav {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+}
 
-    /* Strip 3 (Hamburger): Dibuat tampil di semua layar (Laptop & HP) */
-    .hamburger {
-        display: block; 
-        font-size: 24px;
-        cursor: pointer;
-        color: var(--text);
-        padding: 5px 0;
-    }
+.hamburger {
+    display: block; 
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+    padding: 5px 0;
+}
 
-    #menu-toggle { display: none; }
+#menu-toggle { display: none; }
 
-    /* Menu Dropdown: Tersembunyi sampai Strip 3 diklik */
-    .menu {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 40px;
-        left: 0;
-        width: 180px;
-        background: white;
-        padding: 15px;
-        border: 1px solid #f3f4f6;
-        z-index: 100;
-        list-style: none;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+.menu {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: auto;
+    width: 180px;
+    background: white;
+    padding: 15px;
+    border: 1px solid #f3f4f6;
+    z-index: 100;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 
-    /* Munculkan menu saat checkbox dicentang */
-    #menu-toggle:checked ~ .menu {
-        display: flex;
-    }
+#menu-toggle:checked ~ .menu {
+    display: flex;
+}
 
-    .menu li { margin-bottom: 10px; }
-    .menu a {
-        text-decoration: none;
-        color: var(--gray);
-        font-size: 16px;
-        display: block;
-    }
+.menu li { margin-bottom: 10px; }
+.menu a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 16px;
+    display: block;
+}
 
-    .menu a:hover { color: var(--text); }
+.menu a:hover { color: var(--text); }
 
-    /* Nama Ahmad Zulpiqor: Dibuat mepet ke atas */
-    h1 {
-        font-size: 32px;
-        font-weight: 700;
-        margin-top: 0 !important;
-        margin-bottom: 24px;
-        text-align: center;
-        letter-spacing: -0.02em;
-    }
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0 !important;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
 
-    .bio {
-        font-size: 16px;
-        color: var(--gray);
-        text-align: justify;
-        text-justify: inter-word;
-    }
+.bio {
+    font-size: 16px;
+    color: var(--gray);
+    text-align: justify;
+    text-justify: inter-word;
+}
 
-    .bio p { margin-bottom: 20px; }
-    .highlight { color: var(--text); font-weight: 500; }
+.bio p { margin-bottom: 20px; }
+.highlight { color: var(--text); font-weight: 500; }
 
-    footer {
-        margin-top: 60px;
-        padding-top: 20px;
-        border-top: 1px solid #f3f4f6;
-        font-size: 13px;
-        color: var(--gray);
-        text-align: center;
-    }
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #f3f4f6;
+    font-size: 13px;
+    color: var(--gray);
+    text-align: center;
+}
 
-    /* Penyesuaian khusus HP */
-    @media (max-width: 480px) {
-        h1 { font-size: 28px; }
-        .container { padding: 15px 20px; }
-    }
-</style>
+@media (max-width: 480px) {
+    h1 { font-size: 28px; }
+    .container { padding: 15px 20px; }
+}
