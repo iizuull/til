@@ -95,7 +95,7 @@
                 <a href="blog.html">TIL</a>
                 <a href="https://www.instagram.com/iizuuull_">Instagram</a>
                 <a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a>
-                <button class="theme-toggle" id="theme-toggle">💡</button>
+                
 </nav>
             <h1>Ahmad Zulpiqor</h1>
         </header>
@@ -116,22 +116,6 @@
             © 2026 Ahmad Zulpiqor. Built with simplicity.
         </footer>
     </div>
-    <script>
-    const btn = document.getElementById('theme-toggle');
-    const theme = localStorage.getItem('theme') || 'light';
-
-    // Set tema saat halaman pertama dibuka
-    document.documentElement.setAttribute('data-theme', theme);
-    btn.textContent = theme === 'dark' ? '☀️' : '💡';
-
-    btn.addEventListener('click', () => {
-        let currentTheme = document.documentElement.getAttribute('data-theme');
-        let newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        btn.textContent = newTheme === 'dark' ? '☀️' : '💡';
-    });
-</script>
+   
 </body>
 </html>
