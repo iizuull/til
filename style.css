@@ -1,17 +1,18 @@
 /* Navigasi Utama */
 .main-nav {
     display: flex;
-    justify-content: space-between; /* Nama di kiri, menu di kanan */
+    justify-content: flex-start; /* Menggeser hamburger ke kiri */
     align-items: center;
-    margin-bottom: 50px;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee; /* Garis tipis biar rapi */
+    margin-bottom: 20px;         /* Mengurangi jarak agar judul di bawahnya naik */
+    padding: 10px 0;
 }
 
 .main-nav .menu {
     display: flex;
     gap: 25px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
@@ -26,43 +27,51 @@
     color: #000;
 }
 
-/* Tombol Strip 3 (Hidden di Laptop) */
+/* Tombol Strip 3 */
 #menu-toggle { display: none; }
 .hamburger {
-    display: none;
+    display: block; /* Selalu tampilkan untuk kemudahan navigasi di HP */
     font-size: 24px;
     cursor: pointer;
+    color: #333;
 }
 
 /* Khusus tampilan HP */
 @media (max-width: 768px) {
-    .hamburger { display: block; } /* Munculkan strip 3 */
-    
     .main-nav .menu {
-        display: none; /* Sembunyikan menu asli */
+        display: none; 
         position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
+        top: 50px;
+        left: 0;        /* Dropdown muncul sejajar dengan icon di kiri */
+        width: 200px;
         background: white;
         flex-direction: column;
         padding: 20px;
-        border-bottom: 1px solid #eee;
+        border: 1px solid #eee;
         z-index: 100;
         gap: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    /* Munculkan menu saat strip 3 diklik */
     #menu-toggle:checked ~ .menu {
         display: flex;
     }
 }
 
-/* Bio agar rapi seperti Saugi */
+/* Judul Ahmad Zulpiqor - Biar Naik ke Atas */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0;      /* Menghapus jarak atas agar lebih mepet ke nav */
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Bio rapi ala Saugi */
 main.bio p {
     text-align: justify;
     text-justify: inter-word;
     font-size: 18px;
     color: #444;
-    line-height: 1.8; /* Spasi antar baris lebih lega */
+    line-height: 1.8;
 }
