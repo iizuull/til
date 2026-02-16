@@ -2,29 +2,72 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consistency - Ahmad Zulpiqor</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; max-width: 700px; margin: 60px auto; padding: 0 20px; line-height: 1.7; color: #333; }
-        .back-link { text-decoration: none; color: #666; font-size: 14px; display: block; margin-bottom: 40px; }
-        h1 { font-size: 32px; color: #111; margin-bottom: 10px; font-weight: 600; }
-        .date { color: #999; margin-bottom: 40px; font-size: 14px; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #fff; 
+            color: #222; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.8; /* Jarak antar baris biar gak pusing bacanya */
+        }
+        .container { 
+            max-width: 700px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+        }
+        .back-link {
+            text-decoration: none;
+            color: #666;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 30px;
+        }
+        h1 { 
+            font-size: 32px; 
+            font-weight: 600; 
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+        .meta { 
+            font-size: 14px; 
+            color: #999; 
+            margin-bottom: 40px; 
+        }
+        .content {
+            font-size: 17px; /* Ukuran teks artikel yang pas di HP */
+            color: #333;
+        }
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        /* Perbaikan khusus HP */
+        @media (max-width: 600px) {
+            .container { margin: 20px auto; }
+            h1 { font-size: 26px; }
+            .content { font-size: 16px; }
+            .back-link { font-size: 17px; padding: 10px 0; } /* Menu kembali jadi lebih besar */
+        }
     </style>
 </head>
 <body>
-    <a href="../blog.html" class="back-link">← Kembali ke Blog</a>
-    <h1>Consistency</h1>
-    <div class="date">16 Februari 2026 — Ahmad Zulpiqor</div>
-    
-    <p>Hari ini aku belajar ternyata konsistensi dan disiplin itu adalah hal sangat sulit.
-    Beberapa kali aku memulai untuk tetap konsisten, tetapi hasilnnya masih kurang memuaskan. Memulai dari hal-hal kecil,
-    aku beberapa kali gagal karena banyak sekali hal yang sulit untuk dilalui. Namun, aku sekarang mencoba memulai kembali
-    untuk menulis apa yang aku pelajari pada hari itu. Cukup satu kalimat perhari itu akan lebih baik ketimbang tidak sama sekali,
-    awalnya aku hanya menulis di jurnal harianku, tetapi aku ingin mencoba lewat blog pribadi.<p>
+    <div class="container">
+        <a href="../blog.html" class="back-link">← Kembali ke Blog</a>
         
-    </p>  
-    Aku sangat termotivasi dari beberapa orang, seperti Ahmad Saugi dan Ivan Lanin, mereka sangat keren karena bisa begitu konsisten dalam hidupnya terutama dalam menulis. Hasil dari motivasi 
-    yang kudapatkan aku tuangkan kedalam semua isi sebagai bahan ajar sekaligus bekal awal saya kedepannya. Aku berharap bisa konsisten
-    meskipun keadaan sulit sekalipun karena aku ingin menantang diriku menjadi manusia yang lebih baik.</p>
+        <h1>Consistency</h1>
+        <div class="meta">16 Februari 2026 — Ahmad Zulpiqor</div>
+        
+        <div class="content">
+            <p>Hari ini aku belajar ternyata konsistensi dan disiplin itu adalah hal sangat sulit. Beberapa kali aku memulai untuk tetap konsisten, tetapi hasilnya masih kurang memuaskan...</p>
+            
+            <p>Aku sangat termotivasi dari beberapa orang, seperti Ahmad Saugi dan Ivan Lanin, mereka sangat keren karena bisa begitu konsisten dalam hidupnya terutama dalam menulis.</p>
+            
+            <p>Hasil dari motivasi yang kudapatkan aku tuangkan kedalam semua isi sebagai bahan ajar sekaligus bekal awal saya kedepannya. Aku berharap bisa konsisten meskipun keadaan sulit sekalipun karena aku ingin menantang diriku menjadi manusia yang lebih baik.</p>
+        </div>
+    </div>
 </body>
 </html>
