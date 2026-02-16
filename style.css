@@ -35,3 +35,7 @@
         font-size: 28px; /* Judul nama lu gak kegedean di HP */
     }
 }
+main.bio p {
+    text-align: justify;
+    text-justify: inter-word;
+}
