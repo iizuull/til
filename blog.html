@@ -2,21 +2,75 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Today I Learned - Ahmad Zulpiqor</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background: #fff; color: #222; margin: 0; padding: 0; }
-        .container { max-width: 760px; margin: 60px auto; padding: 0 20px; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
-        .header h1 { font-size: 20px; font-weight: 600; font-style: italic; margin: 0; }
-        .nav a { text-decoration: none; color: #666; font-size: 15px; margin-left: 25px; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #fff; 
+            color: #222; 
+            margin: 0; 
+            padding: 0; 
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 760px; 
+            margin: 60px auto; 
+            padding: 0 20px; 
+        }
+        .header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 60px; 
+            flex-wrap: wrap; /* Agar rapi di HP */
+            gap: 20px;
+        }
+        .header h1 { 
+            font-size: 20px; 
+            font-weight: 600; 
+            font-style: italic; 
+            margin: 0; 
+        }
+        .nav a { 
+            text-decoration: none; 
+            color: #666; 
+            font-size: 16px; /* Ukuran menu diperbesar untuk HP */
+            margin-left: 20px; 
+        }
         .post-list { margin-top: 40px; }
-        .post-item { display: flex; align-items: flex-start; margin-bottom: 35px; text-decoration: none; color: inherit; }
-        .lang-label { font-size: 13px; color: #ccc; min-width: 40px; padding-top: 4px; font-weight: 500; }
-        .post-content h2 { font-size: 19px; font-weight: 500; margin: 0 0 6px 0; }
+        .post-item { 
+            display: flex; 
+            align-items: flex-start; 
+            margin-bottom: 35px; 
+            text-decoration: none; 
+            color: inherit; 
+        }
+        .lang-label { 
+            font-size: 13px; 
+            color: #ccc; 
+            min-width: 45px; 
+            padding-top: 4px; 
+            font-weight: 500; 
+        }
+        .post-content h2 { 
+            font-size: 19px; 
+            font-weight: 500; 
+            margin: 0 0 6px 0; 
+        }
         .post-item:hover h2 { text-decoration: underline; }
         .post-meta { font-size: 14px; color: #999; }
         .post-meta span { color: #4f46e5; }
+
+        /* PENGATURAN KHUSUS PONSEL */
+        @media (max-width: 600px) {
+            .container { margin: 30px auto; }
+            .header { justify-content: center; text-align: center; }
+            .nav { width: 100%; display: flex; justify-content: center; margin-top: 10px; }
+            .nav a { margin: 0 15px; font-size: 18px; } /* Menu jadi lebih besar di HP */
+            .post-content h2 { font-size: 17px; }
+        }
     </style>
 </head>
 <body>
@@ -25,22 +79,20 @@
             <h1>Today I Learned - Zulpiqor</h1>
             <div class="nav">
                 <a href="index.html">Home</a>
-            
+                <a href="https://www.instagram.com/iizuuull_">Instagram</a>
             </div>
         </div>
+        
         <div class="post-list">
             <a href="posts/belajar-konsisten.html" class="post-item">
-    <div class="lang-label">ID</div>
-    <div class="post-content">
-        
-        <h2>Consistency</h2>
-        <div class="post-meta">Feb 16, 2026 — <span>Motivation</span></div>
-    </div>
-</a>
-</div>
+                <div class="lang-label">ID</div>
+                <div class="post-content">
+                    <h2>Consistency</h2>
+                    <div class="post-meta">Feb 16, 2026 — <span>Motivation</span></div>
                 </div>
             </a>
-        </div>
+            
+            </div>
     </div>
 </body>
 </html>
