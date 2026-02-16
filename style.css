@@ -1,9 +1,12 @@
+/* --- Root Variables --- */
 :root {
     --bg: #ffffff;
     --text: #111827;
     --gray: #6b7280;
+    --border: #f3f4f6;
 }
 
+/* --- Global Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -27,17 +30,18 @@ header {
     margin-bottom: 20px;
 }
 
+/* --- Navigasi: Ikon di Kanan --- */
 nav {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end; /* Paksa ikon ke pojok kanan */
     align-items: center;
     position: relative;
     margin-bottom: 10px;
 }
 
 .hamburger {
-    display: block; 
-    font-size: 24px;
+    display: block;
+    font-size: 26px;
     cursor: pointer;
     color: var(--text);
     padding: 5px 0;
@@ -45,41 +49,44 @@ nav {
 
 #menu-toggle { display: none; }
 
+/* --- Menu Dropdown --- */
 .menu {
-    display: none; 
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 40px;
-    right: 0;
+    right: 0; /* Menempel di kanan layar */
     left: auto;
-    width: 180px;
+    width: 200px;
     background: white;
-    padding: 15px;
-    border: 1px solid #f3f4f6;
+    padding: 20px;
+    border: 1px solid var(--border);
     z-index: 100;
     list-style: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 #menu-toggle:checked ~ .menu {
     display: flex;
 }
 
-.menu li { margin-bottom: 10px; }
+.menu li { margin-bottom: 12px; }
 .menu a {
     text-decoration: none;
     color: var(--gray);
     font-size: 16px;
+    transition: color 0.2s;
     display: block;
 }
 
 .menu a:hover { color: var(--text); }
 
+/* --- Tipografi & Bio --- */
 h1 {
     font-size: 32px;
     font-weight: 700;
     margin-top: 0 !important;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Jarak pas ke bio */
     text-align: center;
     letter-spacing: -0.02em;
 }
@@ -94,15 +101,51 @@ h1 {
 .bio p { margin-bottom: 20px; }
 .highlight { color: var(--text); font-weight: 500; }
 
+/* --- Khusus Halaman Blog (Today I Learned) --- */
+.post-list { margin-top: 40px; }
+.post-item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 35px; 
+    text-decoration: none; 
+    color: inherit; 
+    transition: 0.2s; 
+}
+
+.lang-label { 
+    font-size: 13px; 
+    color: #ccc; 
+    min-width: 45px; 
+    padding-top: 4px; 
+    font-weight: 500; 
+}
+
+.post-content h2 { 
+    font-size: 19px; 
+    font-weight: 500; 
+    margin: 0 0 6px 0; 
+    line-height: 1.4;
+}
+
+.post-item:hover h2 { 
+    color: var(--text); 
+    text-decoration: underline; 
+}
+
+.post-meta { font-size: 14px; color: #9ca3af; }
+.post-meta span { color: var(--gray); font-weight: 500; }
+
+/* --- Footer --- */
 footer {
     margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #f3f4f6;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
     font-size: 13px;
-    color: var(--gray);
+    color: #9ca3af;
     text-align: center;
 }
 
+/* --- Media Queries --- */
 @media (max-width: 480px) {
     h1 { font-size: 28px; }
     .container { padding: 15px 20px; }
