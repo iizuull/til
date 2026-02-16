@@ -18,40 +18,63 @@
             color: var(--text);
             margin: 0;
             line-height: 1.7;
-            display: flex;
-            justify-content: center;
         }
 
         .container {
             max-width: 650px;
+            margin: 0 auto;
             padding: 60px 20px;
-            width: 100%;
+        }
+
+        /* Navigasi Modern ala Saugi */
+        header {
+            margin-bottom: 48px;
+            padding-top: 20px;
         }
 
         nav {
             display: flex;
-            gap: 20px;
-            margin-bottom: 60px;
-            justify-content: center;
-            font-size: 16px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-bottom: 40px;
         }
 
-        nav a {
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
             text-decoration: none;
             color: var(--gray);
             transition: color 0.2s;
-            padding: 5px 10px;
+            font-size: 16px;
         }
 
-        nav a:hover {
+        .menu a:hover {
             color: var(--text);
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 48px;
-            padding-top: 20px;
+        /* Mekanisme Strip 3 (Hamburger) */
+        #menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text);
         }
 
         h1 {
@@ -59,12 +82,14 @@
             font-weight: 700;
             margin: 0 0 24px 0;
             letter-spacing: -0.02em;
+            text-align: center;
         }
 
         .bio {
             font-size: 16px;
             color: var(--gray);
-            text-align: left;
+            text-align: justify; /* Supaya teks lurus kanan-kiri */
+            text-justify: inter-word;
         }
 
         .bio p {
@@ -85,11 +110,36 @@
             text-align: center;
         }
 
-        @media (max-width: 480px) {
-            .container { padding: 40px 20px; }
-            nav { gap: 10px; font-size: 15px; }
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 0;
+            }
+
+            .hamburger {
+                display: block; /* Munculkan Strip 3 di HP */
+            }
+
+            .menu {
+                display: none; /* Sembunyikan menu teks */
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                border: 1px solid #f3f4f6;
+                z-index: 100;
+                gap: 15px;
+            }
+
+            /* Logika: Jika strip 3 diklik, menu muncul */
+            #menu-toggle:checked ~ .menu {
+                display: flex;
+            }
+
             h1 { font-size: 28px; }
-            .bio { font-size: 15px; }
         }
     </style>
 </head>
@@ -97,27 +147,32 @@
     <div class="container">
         <header>
             <nav>
-                <a href="index.html">About</a>
-                <a href="blog.html">TIL</a>
-                <a href="https://www.instagram.com/iizuuull_">Instagram</a>
-                <a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a>
+                <div class="logo">iizuull</div>
+                
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+                <ul class="menu">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="blog.html">TIL</a></li>
+                    <li><a href="https://www.instagram.com/iizuuull_">Instagram</a></li>
+                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
+                </ul>
             </nav>
             <h1>Ahmad Zulpiqor</h1>
         </header>
 
         <main class="bio">
-    <p>
-        Halo! Saya <span class="highlight">Ahmad Zulpiqor</span>, biasa dipanggil <span class="highlight">iizuull</span>. Saat ini saya adalah mahasiswa Arkeologi di Universitas Gadjah Mada yang sedang fokus mendalami narasi masa lalu.
-    </p>
-    <p>
-        Di luar kesibukan akademik, saya aktif bekerja sebagai Freelancer di G2G. Saya juga mengisi waktu dengan membaca buku, memotret, dan sangat menikmati kegiatan solo traveling untuk mencari ketenangan sekaligus mengeksplorasi perspektif baru di setiap perjalanan.
-    </p>
-    <p>
-        Melalui ruang digital ini, khususnya di bagian <a href="blog.html" class="highlight" style="text-decoration: underline;">Today I Learned</a>, saya menantang diri untuk konsisten menulis setiap hari tentang proses belajar, rutinitas, dan hal-hal yang saya temui.
-    </p>
-</main>
-
-
+            <p>
+                Halo! Saya <span class="highlight">Ahmad Zulpiqor</span>, biasa dipanggil <span class="highlight">iizuull</span>. Saat ini saya adalah mahasiswa Arkeologi di Universitas Gadjah Mada yang sedang fokus mendalami narasi masa lalu.
+            </p>
+            <p>
+                Di luar kesibukan akademik, saya aktif bekerja sebagai Freelancer di G2G. Saya juga mengisi waktu dengan membaca buku, memotret, dan sangat menikmati kegiatan solo traveling untuk mencari ketenangan sekaligus mengeksplorasi perspektif baru di setiap perjalanan.
+            </p>
+            <p>
+                Melalui ruang digital ini, khususnya di bagian <a href="blog.html" class="highlight" style="text-decoration: underline;">Today I Learned</a>, saya menantang diri untuk konsisten menulis setiap hari tentang proses belajar, rutinitas, dan hal-hal yang saya temui.
+            </p>
+        </main>
 
         <footer>
             © 2026 Ahmad Zulpiqor. Built with simplicity.
