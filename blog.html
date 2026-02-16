@@ -4,81 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Today I Learned - Ahmad Zulpiqor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        body { font-family: 'Inter', sans-serif; background: #fff; color: #222; margin: 0; padding: 0; line-height: 1.6; }
-        .container { max-width: 700px; margin: 40px auto; padding: 0 20px; }
-
-        /* Navbar dengan Strip 3 */
-        .header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            margin-bottom: 60px; 
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .header h1 { font-size: 20px; font-weight: 600; font-style: italic; margin: 0; }
-        
-        .nav-wrapper { display: flex; align-items: center; }
-        .menu { display: flex; list-style: none; gap: 20px; margin: 0; padding: 0; }
-        .menu a { text-decoration: none; color: #666; font-size: 16px; font-weight: 500; }
-        .menu a:hover { color: #000; }
-
-        /* Checkbox & Hamburger (Hidden di Desktop) */
-        #menu-toggle { display: none; }
-        .hamburger { display: none; font-size: 24px; cursor: pointer; color: #333; }
-
-        /* Post List Styles ala Saugi */
-        .post-list { margin-top: 40px; }
-        .post-item { display: flex; align-items: flex-start; margin-bottom: 35px; text-decoration: none; color: inherit; transition: 0.2s; }
-        .lang-label { font-size: 13px; color: #ccc; min-width: 45px; padding-top: 4px; font-weight: 500; }
-        .post-content h2 { font-size: 19px; font-weight: 500; margin: 0 0 6px 0; }
-        .post-item:hover h2 { color: #4f46e5; text-decoration: underline; }
-        .post-meta { font-size: 14px; color: #999; }
-        .post-meta span { color: #4f46e5; font-weight: 500; }
-
-        /* Responsive Mobile (HP) */
-        @media (max-width: 768px) {
-            .container { margin: 20px auto; }
-            .hamburger { display: block; } /* Munculkan strip 3 */
-            
-            .menu {
-                display: none; /* Sembunyikan menu asli */
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 20px;
-                border-bottom: 1px solid #eee;
-                z-index: 100;
-                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            }
-            .menu a { font-size: 18px; padding: 10px 0; display: block; }
-            
-            /* Munculkan menu saat strip 3 diklik */
-            #menu-toggle:checked ~ .menu { display: flex; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <nav class="header">
-            <h1>Today I Learned - Zulpiqor</h1>
-            
-            <div class="nav-wrapper">
+        <header>
+            <nav>
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="hamburger">&#9776;</label>
-                
+
                 <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="blog.html">Today I Learned</a></li>
+                    <li><a href="https://www.instagram.com/iizuuull_">Instagram</a></li>
+                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
                 </ul>
-            </div>
-        </nav>
+            </nav>
+            <h1>Today I Learned</h1>
+        </header>
         
         <div class="post-list">
             <a href="posts/17-02-2026.html" class="post-item">
@@ -97,6 +41,10 @@
                 </div>
             </a>
         </div>
+
+        <footer>
+            © 2026 Ahmad Zulpiqor. Built with simplicity.
+        </footer>
     </div>
 </body>
 </html>
