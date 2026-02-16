@@ -25,23 +25,25 @@
 
         .container {
             max-width: 650px;
-            padding: 80px 20px;
+            padding: 60px 20px; /* Ukuran padding disesuaikan untuk layar HP */
             width: 100%;
         }
 
-        /* Navigasi Minimalis */
+        /* Navigasi Responsif */
         nav {
             display: flex;
             gap: 20px;
             margin-bottom: 60px;
             justify-content: center;
-            font-size: 14px;
+            font-size: 16px; /* Ukuran dasar dinaikkan agar tidak kekecilan */
+            flex-wrap: wrap; /* Agar menu turun rapi di layar kecil */
         }
 
         nav a {
             text-decoration: none;
             color: var(--gray);
             transition: color 0.2s;
+            padding: 5px 10px; /* Area klik lebih luas untuk jari */
         }
 
         nav a:hover {
@@ -84,6 +86,23 @@
             color: var(--gray);
             text-align: center;
         }
+
+        /* KHUSUS UNTUK TAMPILAN PONSEL */
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+            nav {
+                gap: 10px;
+                font-size: 15px; /* Tetap nyaman dibaca di layar kecil */
+            }
+            h1 {
+                font-size: 28px; /* Ukuran judul nama sedikit mengecil agar pas */
+            }
+            .bio {
+                font-size: 15px; /* Teks bio sedikit disesuaikan untuk layar HP */
+            }
+        }
     </style>
 </head>
 <body>
@@ -95,12 +114,11 @@
                 <a href="blog.html">TIL</a>
                 <a href="https://www.instagram.com/iizuuull_">Instagram</a>
                 <a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a>
-                
-</nav>
+            </nav>
             <h1>Ahmad Zulpiqor</h1>
         </header>
 
-       <main class="bio">
+        <main class="bio">
             <p>
                 Halo! Saya Zul, seorang mahasiswa <span class="highlight">Arkeologi</span> di Universitas Gadjah Mada. Saya memiliki ketertarikan menulis, membaca, dan eksplor dunia yang belum pernah aku lihat.
             </p>
@@ -108,7 +126,7 @@
                 Di sela kesibukan akademik, saya senang mengeksplorasi tempat-tempat baru, selain suka jalan-jalan saya juga suka tidur dan mencari ketenangan.
             </p>
             <p>
-                Melalui situs ini, khususnya bagian <a href="blog.html" class="highlight" style="text-decoration: underline;">Today I Learned</a>, saya membagikan catatan harian mengenai proses belajar, kegiata, dan hal lainnya.
+                Melalui situs ini, khususnya bagian <a href="blog.html" class="highlight" style="text-decoration: underline;">Today I Learned</a>, saya membagikan catatan harian mengenai proses belajar, kegiatan, dan hal lainnya.
             </p>
         </main>
 
@@ -116,6 +134,5 @@
             © 2026 Ahmad Zulpiqor. Built with simplicity.
         </footer>
     </div>
-   
 </body>
 </html>
