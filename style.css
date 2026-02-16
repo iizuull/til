@@ -1,41 +1,68 @@
 /* Navigasi Utama */
 .main-nav {
     display: flex;
-    gap: 25px;         /* Jarak antar menu lebih lebar */
-    justify-content: center;
-    margin-bottom: 50px;
+    justify-content: space-between; /* Nama di kiri, menu di kanan */
     align-items: center;
-    flex-wrap: wrap;   /* Biar kalau di HP sempit, dia turun rapi */
+    margin-bottom: 50px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee; /* Garis tipis biar rapi */
 }
 
-.main-nav a, .theme-toggle {
-    font-size: 18px;   /* Ukuran lebih gede biar enak diklik jempol */
+.main-nav .menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.main-nav a {
+    font-size: 18px;
     font-weight: 500;
     text-decoration: none;
-    color: var(--gray-color);
+    color: #666;
     transition: 0.2s;
-    background: none;
-    border: none;
+}
+
+.main-nav a:hover {
+    color: #000;
+}
+
+/* Tombol Strip 3 (Hidden di Laptop) */
+#menu-toggle { display: none; }
+.hamburger {
+    display: none;
+    font-size: 24px;
     cursor: pointer;
 }
 
-.main-nav a:hover, .theme-toggle:hover {
-    color: var(--text-color);
+/* Khusus tampilan HP */
+@media (max-width: 768px) {
+    .hamburger { display: block; } /* Munculkan strip 3 */
+    
+    .main-nav .menu {
+        display: none; /* Sembunyikan menu asli */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+        z-index: 100;
+        gap: 15px;
+    }
+
+    /* Munculkan menu saat strip 3 diklik */
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
 }
 
-/* Khusus buat tampilan HP (Layar Kecil) */
-@media (max-width: 480px) {
-    .main-nav {
-        gap: 15px;     /* Jarak agak rapat dikit di HP biar muat sesampingan */
-    }
-    .main-nav a, .theme-toggle {
-        font-size: 16px; /* Ukuran pas buat layar HP */
-    }
-    h1 {
-        font-size: 28px; /* Judul nama lu gak kegedean di HP */
-    }
-}
+/* Bio agar rapi seperti Saugi */
 main.bio p {
     text-align: justify;
     text-justify: inter-word;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.8; /* Spasi antar baris lebih lega */
 }
