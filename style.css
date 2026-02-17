@@ -18,16 +18,26 @@
 }
 
 /* --- Global Reset --- */
-* { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    transition: background 0.3s, color 0.3s; 
+}
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.8; /* Membuat teks lebih enak dibaca */
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container { max-width: 650px; margin: 0 auto; padding: 40px 20px; }
+.container { 
+    max-width: 650px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+}
 
 /* --- Navigasi --- */
 nav {
@@ -43,12 +53,14 @@ nav {
     border: none;
     cursor: pointer;
     font-size: 20px;
+    color: var(--text);
 }
 
 .hamburger {
     font-size: 26px;
     cursor: pointer;
     z-index: 1001;
+    color: var(--text);
 }
 
 .menu {
@@ -78,13 +90,25 @@ nav {
     font-weight: 500;
 }
 
-/* --- Typography (Bagian Penting untuk Kerapihan) --- */
-h1 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+/* --- Typography (Kunci Perbedaan Laptop & HP) --- */
+h1 { 
+    font-size: 32px; 
+    font-weight: 700; 
+    text-align: center; 
+    margin-bottom: 40px; 
+}
 
-/* Mengatur paragraf di halaman About (.bio) dan Blog (.content-body) */
+/* Tampilan default untuk HP: Rata Kiri */
 .bio p, .content-body p {
-    text-align: justify; /* Rata kanan-kiri */
-    margin-bottom: 20px; /* Jarak antar paragraf */
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Tampilan khusus untuk Laptop (Layar > 768px): Rata Kanan-Kiri */
+@media (min-width: 768px) {
+    .bio p, .content-body p {
+        text-align: justify;
+    }
 }
 
 .highlight {
@@ -94,7 +118,7 @@ h1 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 40px;
     font-weight: 500;
 }
 
-/* --- List Postingan di blog.html --- */
+/* --- List Postingan --- */
 .post-list { margin-top: 20px; }
 
 .post-item { 
@@ -111,9 +135,18 @@ h1 { font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 40px;
     margin-top: 5px;
 }
 
-.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; }
-.post-meta { font-size: 14px; color: var(--gray); }
+.post-content h2 { 
+    font-size: 19px; 
+    font-weight: 500; 
+    margin-bottom: 4px; 
+}
 
+.post-meta { 
+    font-size: 14px; 
+    color: var(--gray); 
+}
+
+/* --- Footer --- */
 footer { 
     margin-top: 80px; 
     padding-top: 20px; 
