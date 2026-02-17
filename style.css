@@ -1,30 +1,162 @@
-:root { --bg: #ffffff; --text: #111827; --gray: #6b7280; --border: #f3f4f6; --accent: #4f46e5; --menu-bg: rgba(255, 255, 255, 0.98); }
-[data-theme="dark"] { --bg: #111827; --text: #f9fafb; --gray: #9ca3af; --border: #1f2937; --accent: #818cf8; --menu-bg: rgba(17, 24, 39, 0.98); }
+/* --- Root Variables & Themes --- */
+:root {
+    --bg: #ffffff;
+    --text: #111827;
+    --gray: #6b7280;
+    --border: #f3f4f6;
+    --accent: #4f46e5;
+    --menu-bg: rgba(255, 255, 255, 0.98);
+}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.7; }
-.container { max-width: 650px; margin: 0 auto; padding: 20px 25px 40px 25px; }
+[data-theme="dark"] {
+    --bg: #111827;
+    --text: #f9fafb;
+    --gray: #9ca3af;
+    --border: #1f2937;
+    --accent: #818cf8;
+    --menu-bg: rgba(17, 24, 39, 0.98);
+}
 
-/* Navigasi */
-nav { display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
-.menu { position: fixed; top: 0; right: -100%; width: 250px; height: 100%; background: var(--menu-bg); backdrop-filter: blur(10px); padding: 80px 40px; display: flex; flex-direction: column; gap: 25px; transition: 0.4s; z-index: 1000; list-style: none; }
+/* --- Global Reset --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container { 
+    max-width: 650px; 
+    margin: 0 auto; 
+    padding: 5px 20px 40px 20px; 
+}
+
+/* --- Navigasi --- */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0px;
+}
+
+#theme-toggle, .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--text);
+    padding: 10px;
+    position: relative; /* Agar z-index bekerja */
+    z-index: 1001;      /* Harus lebih tinggi dari .menu yang 1000 agar bisa diklik di HP */
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: var(--menu-bg);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid var(--border);
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.4s ease-in-out;
+    z-index: 1000; /* Menu di lapisan bawah tombol hamburger */
+    list-style: none;
+}
+
 .menu.active { right: 0; }
-.menu a { text-decoration: none; color: var(--text) !important; font-weight: 500; }
+.menu li { list-style: none; }
+.menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
-/* Bold Nama & Typography */
-h1 { font-size: 32px; font-weight: 800 !important; text-align: center !important; margin: 10px 0 35px 0; }
-.post-header h1 { text-align: left !important; font-weight: 700 !important; }
+/* --- Typography & Header (Fixed ala Saugi) --- */
+h1 { 
+    font-size: 32px; 
+    font-weight: 700; 
+    text-align: left !important; 
+    margin: 10px 0 15px 0; 
+}
 
-/* Anti-Biru & Daftar Blog */
-.post-item { display: flex; margin-bottom: 25px; }
-.post-content a, .post-content a:visited { text-decoration: none !important; color: var(--text) !important; }
-.post-content h2 { font-size: 19px; font-weight: 600; margin-bottom: 4px; }
+.post-header {
+    text-align: left !important; 
+    margin-bottom: 30px;
+}
+
+.meta-detail {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* --- Category Tag (Kotak Abu-abu Ala Saugi) --- */
+.category-tag {
+    display: inline-block;
+    background-color: var(--border); 
+    color: var(--text);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.bio p, .content-body p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin-bottom: 20px;
+}
+
+.highlight, b, strong {
+    background: none !important;
+    color: var(--text);
+    font-weight: 700;
+    padding: 0;
+}
+
+/* --- Blog Page Styles --- */
+.post-item { display: flex; margin-bottom: 25px; text-decoration: none; color: inherit; }
 .lang-label { min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px; }
-.cat-link { color: var(--accent); cursor: pointer; font-weight: 500; }
+.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; text-align: left !important; }
+.post-meta { font-size: 14px; color: var(--gray); }
 
-/* Rata Kanan Kiri & Jarak HP */
-.bio p, .content-body p { text-align: justify !important; text-justify: inter-word !important; hyphens: auto; -webkit-hyphens: auto; margin-bottom: 25px; }
-.category-tag { display: inline-block; background-color: var(--border); padding: 6px 14px; border-radius: 6px; margin-bottom: 45px; }
-.back-link, .back-link-tag { color: var(--gray) !important; text-decoration: none !important; font-size: 14px; cursor: pointer; }
+.post-meta span {
+    color: var(--accent);
+    font-weight: 500;
+}
 
-footer { margin-top: 80px; border-top: 1px solid var(--border); padding: 20px 0; font-size: 13px; color: var(--gray); text-align: center; }
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 30px;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--accent);
+}
+
+/* --- Footer --- */
+footer { 
+    margin-top: 80px; 
+    padding-top: 20px; 
+    border-top: 1px solid var(--border); 
+    font-size: 13px; 
+    color: var(--gray); 
+    text-align: center; 
+}
