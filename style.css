@@ -206,3 +206,32 @@ footer {
     color: var(--gray); 
     text-align: center; 
 }
+/* Perbaikan Link "Kembali ke Blog" agar tidak ungu/biru */
+.back-link {
+    display: inline-block;
+    text-decoration: none !important;
+    color: var(--gray) !important; /* Warna abu-abu bersih */
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.back-link:hover {
+    color: var(--accent) !important; /* Warna berubah saat disentuh */
+}
+
+/* Perbaikan Judul di dalam Postingan agar tetap putih/hitam */
+.post-header h1 {
+    color: var(--text) !important;
+    text-align: left !important;
+    margin: 10px 0;
+}
+
+/* Kotak Kategori di bawah judul artikel */
+.category-tag {
+    background-color: var(--border) !important;
+    color: var(--text) !important;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
