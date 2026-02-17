@@ -1,77 +1,166 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Today I Learned - Ahmad Zulpiqor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Today I Learned - Ahmad Zulpiqor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .post-item.hidden { display: none; }
+        
+        #tag-header {
+            display: none;
+            margin-bottom: 35px;
+        }
+
+        #tag-header h1 {
+            text-align: left !important;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .back-link-tag {
+            color: var(--accent);
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .cat-link {
+            cursor: pointer;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .cat-link:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header id="main-header">
-            <nav>
-                <button id="theme-toggle" title="Ubah Tema">🌙</button>
-                <div class="hamburger" id="hamburger">☰</div>
-                <ul class="menu" id="menu">
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="blog.html">Today I Learned</a></li>
-                    <li><a href="https://www.instagram.com/iizuull__">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/username-kamu">Linkedin</a></li>
-                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
-                </ul>
-            </nav>
-            <h1 id="page-title">Today I Learned</h1>
-        </header>
+    <div class="container">
+        <header id="main-header">
+            <nav>
+                <button id="theme-toggle" title="Ubah Tema">🌙</button>
+                <div class="hamburger" id="hamburger">☰</div>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="blog.html">Today I Learned</a></li>
+                    <li><a href="https://www.instagram.com/iizuull__">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/username-kamu">Linkedin</a></li>
+                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
+                </ul>
+            </nav>
+            <h1 id="page-title">Today I Learned</h1>
+        </header>
 
-        <div id="tag-header">
-            <span class="back-link-tag" id="reset-filter">← Back to all posts</span>
-            <h1 id="tag-title">Tag: Topic</h1>
-        </div>
+        <div id="tag-header">
+            <span class="back-link-tag" id="reset-filter">← Back to all posts</span>
+            <h1 id="tag-title">Tag: Topic</h1>
+        </div>
 
-        <div class="post-list">
-            <div class="post-item" data-category="Religion Mind">
-                <div class="lang-label">ID</div>
-                <div class="post-content">
-                    <a href="posts/216.html">
-                        <h2>Al baqarah: 216</h2>
-                    </a>
-                    <div class="post-meta">
-                        Feb 17, 2026 — <span class="cat-link">Religion</span> ◦ <span class="cat-link">Mind</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-item" data-category="Mind">
-                <div class="lang-label">ID</div>
-                <div class="post-content">
-                    <a href="posts/let-them.html">
-                        <h2>Let Them</h2>
-                    </a>
-                    <div class="post-meta">
-                        Feb 17, 2026 — <span class="cat-link">Mind</span>
-                    </div>
-                </div>
-            </div>
+        <div class="post-list">
+            <div class="post-item" data-category="Religion Mind" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/216.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Al baqarah: 216</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 17, 2026 — <span class="cat-link">Religion</span> ◦ <span class="cat-link">Mind</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-item" data-category="Mind" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/let-them.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Let Them</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 17, 2026 — <span class="cat-link">Mind</span>
+                    </div>
+                </div>
+            </div>
 
-            <div class="post-item" data-category="Motivation">
-                <div class="lang-label">ID</div>
-                <div class="post-content">
-                    <a href="posts/belajar-konsisten.html">
-                        <h2>Consistency</h2>
-                    </a>
-                    <div class="post-meta">
-                        Feb 16, 2026 — <span class="cat-link">Motivation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="post-item" data-category="Motivation" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/belajar-konsisten.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Consistency</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 16, 2026 — <span class="cat-link">Motivation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <footer>
-            © 2026 Ahmad Zulpiqor. Built with simplicity.
-        </footer>
-    </div>
+        <footer>
+            © 2026 Ahmad Zulpiqor. Built with simplicity.
+        </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        const posts = document.querySelectorAll('.post-item');
+        const mainHeader = document.getElementById('page-title');
+        const tagHeader = document.getElementById('tag-header');
+        const tagTitle = document.getElementById('tag-title');
+        const resetBtn = document.getElementById('reset-filter');
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+        const themeToggle = document.getElementById('theme-toggle');
+
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('cat-link')) {
+                const targetCategory = e.target.innerText.trim();
+                posts.forEach(post => {
+                    const categories = post.getAttribute('data-category').split(' ');
+                    if (categories.includes(targetCategory)) {
+                        post.classList.remove('hidden');
+                    } else {
+                        post.classList.add('hidden');
+                    }
+                });
+                mainHeader.style.display = 'none';
+                tagHeader.style.display = 'block';
+                tagTitle.innerText = `Tag: ${targetCategory}`;
+                window.scrollTo(0, 0);
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            posts.forEach(post => post.classList.remove('hidden'));
+            tagHeader.style.display = 'none';
+            mainHeader.style.display = 'block';
+        });
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+            hamburger.innerHTML = menu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('active');
+                hamburger.innerHTML = '☰';
+            }
+        });
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = isDark ? '🌙' : '☀️';
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '☀️';
+        }
+    </script>
 </body>
 </html>
