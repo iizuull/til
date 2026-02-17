@@ -44,7 +44,6 @@ nav {
     justify-content: flex-end;
     align-items: center;
     gap: 15px;
-    margin-bottom: 0px;
 }
 
 #theme-toggle, .hamburger {
@@ -83,11 +82,11 @@ nav {
 h1 { 
     font-size: 32px; 
     font-weight: 700; 
-    text-align: center; /* Judul Today I Learned tetap di tengah */
+    text-align: center; 
     margin: 10px 0 35px 0; 
 }
 
-/* Judul khusus di dalam artikel harian (rata kiri) */
+/* Judul khusus di dalam isi postingan (rata kiri) */
 .post-header h1 {
     text-align: left !important;
     margin: 10px 0 10px 0;
@@ -105,12 +104,12 @@ h1 {
     display: block;
 }
 
-/* --- Blog Page Styles (Link & Filter) --- */
+/* --- Blog Page Styles (Hapus Warna Biru) --- */
 .post-item { 
     display: flex; 
     margin-bottom: 25px; 
-    text-decoration: none; 
-    color: inherit; /* Menghilangkan warna biru link */
+    text-decoration: none !important; 
+    color: inherit !important; /* Paksa warna ikut teks utama */
 }
 
 .post-item.hidden { 
@@ -124,20 +123,22 @@ h1 {
     margin-top: 5px; 
 }
 
+/* Menghilangkan warna biru default link browser */
 .post-content a {
-    text-decoration: none;
-    color: inherit; /* Judul artikel mengikuti warna tema */
+    text-decoration: none !important;
+    color: inherit !important;
 }
 
 .post-content h2 { 
     font-size: 19px; 
     font-weight: 500; 
     margin-bottom: 4px; 
-    text-align: left !important; 
+    text-align: left !important;
+    color: var(--text) !important;
 }
 
 .post-item:hover h2 {
-    color: var(--accent); /* Interaksi saat di-hover */
+    color: var(--accent) !important;
 }
 
 .post-meta { 
@@ -145,10 +146,12 @@ h1 {
     color: var(--gray); 
 }
 
+/* Link kategori tetap berwarna indigo agar menonjol */
 .cat-link {
     cursor: pointer;
-    color: var(--accent); /* Tag tetap berwarna agar menonjol */
+    color: var(--accent);
     font-weight: 500;
+    text-decoration: none;
 }
 
 .cat-link:hover { 
@@ -163,7 +166,7 @@ h1 {
 }
 
 #tag-header h1 {
-    text-align: left !important; /* Judul Tag: NamaTag di kiri */
+    text-align: left !important;
     margin: 0;
     font-size: 32px;
 }
@@ -171,7 +174,7 @@ h1 {
 .back-link-tag {
     display: inline-block;
     color: var(--gray);
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 14px;
     margin-bottom: 15px;
     cursor: pointer;
