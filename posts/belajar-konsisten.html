@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <script>
-        /* SCRIPT INI HARUS DI HEAD AGAR MODE GELAP TIDAK FLASH PUTIH SAAT DI-REFRESH */
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -16,11 +15,18 @@
 </head>
 <body>
     <div class="container">
-        <a href="../blog.html" class="back-link">← Kembali ke Blog</a>
+        <nav class="post-nav">
+            <span class="site-title">Today I Learned - Ahmad Zulpiqor</span>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../blog.html">Main Site</a>
+            </div>
+        </nav>
         
         <header class="post-header">
             <div class="meta-detail">Published February 16, 2026</div>
             <h1>Consistency</h1>
+            <div class="category-tag">Motivation</div>
         </header>
 
         <article class="content-body">
