@@ -67,12 +67,14 @@ nav {
     gap: 25px;
     transition: 0.4s ease-in-out;
     z-index: 1000;
+    list-style: none; /* MENGHAPUS TITIK MENU */
 }
 
 .menu.active { right: 0; }
+.menu li { list-style: none; } /* MEMASTIKAN TITIK HILANG */
 .menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
-/* --- Typography (Sejajar & Bold Bersih) --- */
+/* --- Typography --- */
 h1 { font-size: 32px; font-weight: 700; text-align: center; margin: 10px 0 35px 0; }
 
 .bio p, .content-body p {
@@ -83,54 +85,25 @@ h1 { font-size: 32px; font-weight: 700; text-align: center; margin: 10px 0 35px 
     margin-bottom: 20px;
 }
 
-/* Bold tanpa bayangan */
+/* Bold bersih tanpa shadow */
 b, strong, .highlight {
     background: none !important;
     font-weight: 700;
     color: var(--text);
-    padding: 0;
 }
 
-/* --- Blog List (Warna Aksen Kembali) --- */
+/* --- Blog List & Aksen Biru --- */
 .post-list { margin-top: 20px; }
-
-.post-item { 
-    display: flex; 
-    margin-bottom: 30px; 
-    text-decoration: none; 
-    color: inherit; 
-}
-
-.lang-label { 
-    min-width: 50px; 
-    color: var(--gray); 
-    font-size: 13px; 
-    margin-top: 5px;
-}
-
-.post-content h2 { 
-    font-size: 19px; 
-    font-weight: 500; 
-    margin-bottom: 4px;
-    transition: color 0.2s;
-}
-
-.post-item:hover h2 { color: var(--accent); }
-
+.post-item { display: flex; margin-bottom: 30px; text-decoration: none; color: inherit; }
+.lang-label { min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px; }
+.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; }
 .post-meta { font-size: 14px; color: var(--gray); }
 
-/* Warna biru/aksen untuk kategori */
+/* Warna biru kategori */
 .post-meta span {
     color: var(--accent);
     font-weight: 500;
 }
 
 /* --- Footer --- */
-footer { 
-    margin-top: 80px; 
-    padding-top: 20px; 
-    border-top: 1px solid var(--border); 
-    font-size: 13px; 
-    color: var(--gray); 
-    text-align: center; 
-}
+footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--gray); text-align: center; }
