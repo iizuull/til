@@ -29,15 +29,13 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
 }
 
-/* --- Layout --- */
 .container { 
     max-width: 650px; 
     margin: 0 auto; 
-    padding: 10px 20px 40px 20px; /* Padding atas sangat tipis agar nama naik */
+    padding: 10px 20px 40px 20px; /* Jarak atas sudah dipangkas agar nama naik */
 }
 
 /* --- Navigasi --- */
@@ -46,21 +44,15 @@ nav {
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
-    margin-bottom: 5px; /* Jarak navigasi ke nama dipersempit */
+    margin-bottom: 5px;
 }
 
-#theme-toggle {
+#theme-toggle, .hamburger {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 22px;
     color: var(--text);
-}
-
-.hamburger {
-    font-size: 26px;
-    cursor: pointer;
-    z-index: 1001;
 }
 
 .menu {
@@ -82,33 +74,23 @@ nav {
 }
 
 .menu.active { right: 0; }
+.menu a { text-decoration: none; color: var(--text); font-size: 18px; }
 
-.menu a {
-    text-decoration: none;
-    color: var(--text);
-    font-size: 18px;
-    font-weight: 500;
-}
-
-/* --- Typography (Perbaikan Nama & Perataan Teks) --- */
+/* --- Typography (KUNCI RAPI SEJAJAR DI HP & LAPTOP) --- */
 h1 { 
     font-size: 32px; 
     font-weight: 700; 
     text-align: center; 
-    margin: 0 0 30px 0; /* Menghilangkan margin atas agar nama benar-benar naik */
+    margin: 0 0 30px 0; 
 }
 
-/* Default HP: Rata Kiri (Supaya tidak berantakan/renggang) */
 .bio p, .content-body p {
-    text-align: left !important; 
+    text-align: justify; /* Membuat teks sejajar kanan-kiri */
+    text-justify: inter-word;
+    hyphens: auto; /* Memotong kata otomatis agar tidak ada celah spasi besar */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
     margin-bottom: 20px;
-}
-
-/* Laptop (Layar > 768px): Rata Kanan-Kiri */
-@media (min-width: 768px) {
-    .bio p, .content-body p {
-        text-align: justify !important;
-    }
 }
 
 .highlight {
@@ -118,19 +100,8 @@ h1 {
     font-weight: 500;
 }
 
-/* --- Blog List --- */
-.post-list { margin-top: 20px; }
+/* --- List Postingan & Footer --- */
 .post-item { display: flex; margin-bottom: 25px; text-decoration: none; color: inherit; }
 .lang-label { min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px; }
-.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; }
-.post-meta { font-size: 14px; color: var(--gray); }
-
-/* --- Footer --- */
-footer { 
-    margin-top: 80px; 
-    padding-top: 20px; 
-    border-top: 1px solid var(--border); 
-    font-size: 13px; 
-    color: var(--gray); 
-    text-align: center; 
-}
+.post-content h2 { font-size: 19px; font-weight: 500; }
+footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; text-align: center; color: var(--gray); }
