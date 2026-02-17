@@ -1,5 +1,6 @@
+// Ambil semua elemen yang dibutuhkan
 const posts = document.querySelectorAll('.post-item');
-const mainHeader = document.getElementById('page-title');
+const mainHeader = document.querySelector('header h1');
 const tagHeader = document.getElementById('tag-header');
 const tagTitle = document.getElementById('tag-title');
 const resetBtn = document.getElementById('reset-filter');
@@ -7,7 +8,7 @@ const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 const themeToggle = document.getElementById('theme-toggle');
 
-// --- Logika Filter Tag ---
+// --- Logika Filter Tag ala Saugi ---
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('cat-link')) {
         const targetCategory = e.target.innerText.trim();
@@ -15,9 +16,9 @@ document.addEventListener('click', (e) => {
         posts.forEach(post => {
             const categories = post.getAttribute('data-category').split(' ');
             if (categories.includes(targetCategory)) {
-                post.classList.remove('hidden');
+                post.style.display = 'flex'; // Tampilkan yang cocok
             } else {
-                post.classList.add('hidden');
+                post.style.display = 'none'; // Sembunyikan yang tidak cocok
             }
         });
 
@@ -30,13 +31,13 @@ document.addEventListener('click', (e) => {
 
 if(resetBtn) {
     resetBtn.addEventListener('click', () => {
-        posts.forEach(post => post.classList.remove('hidden'));
+        posts.forEach(post => post.style.display = 'flex');
         tagHeader.style.display = 'none';
         mainHeader.style.display = 'block';
     });
 }
 
-// --- Logika Navigasi HP ---
+// --- Logika Navigasi & Tema (Tetap Sama) ---
 if(hamburger) {
     hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -52,7 +53,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// --- Logika Mode Gelap ---
 if(themeToggle) {
     themeToggle.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
