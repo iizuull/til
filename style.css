@@ -1,112 +1,205 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Today I Learned - Ahmad Zulpiqor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .post-item.hidden { display: none !important; }
-        
-        #tag-header {
-            display: none;
-            margin-bottom: 35px;
-            text-align: left;
-        }
+/* --- Root Variables & Themes --- */
+:root {
+    --bg: #ffffff;
+    --text: #111827;
+    --gray: #6b7280;
+    --border: #f3f4f6;
+    --accent: #4f46e5;
+    --menu-bg: rgba(255, 255, 255, 0.98);
+}
 
-        .back-link-tag {
-            display: inline-block;
-            color: var(--gray);
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 15px;
-            transition: color 0.2s;
-            cursor: pointer;
-        }
+[data-theme="dark"] {
+    --bg: #111827;
+    --text: #f9fafb;
+    --gray: #9ca3af;
+    --border: #1f2937;
+    --accent: #818cf8;
+    --menu-bg: rgba(17, 24, 39, 0.98);
+}
 
-        .back-link-tag:hover { color: var(--accent); }
+/* --- Global Reset --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
-        #tag-header h1 {
-            text-align: left !important;
-            margin: 0;
-            font-size: 32px;
-            font-weight: 700;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+}
 
-        .cat-link {
-            cursor: pointer;
-            color: var(--accent);
-            font-weight: 500;
-        }
-        .cat-link:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header id="main-header">
-            <nav>
-                <button id="theme-toggle" title="Ubah Tema">🌙</button>
-                <div class="hamburger" id="hamburger">☰</div>
-                <ul class="menu" id="menu">
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="blog.html">Today I Learned</a></li>
-                    <li><a href="https://www.instagram.com/iizuull__">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/username-kamu">Linkedin</a></li>
-                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
-                </ul>
-            </nav>
-            <h1 id="page-title">Today I Learned</h1>
-        </header>
+.container { 
+    max-width: 650px; 
+    margin: 0 auto; 
+    padding: 5px 20px 40px 20px; 
+}
 
-        <div id="tag-header">
-            <span class="back-link-tag" id="reset-filter">← Back to all posts</span>
-            <h1 id="tag-title">Tag: Topic</h1>
-        </div>
+/* --- Navigasi --- */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0px;
+}
 
-        <div class="post-list">
-            <div class="post-item" data-category="Religion Mind" style="display: flex; margin-bottom: 25px;">
-                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
-                <div class="post-content">
-                    <a href="posts/216.html" style="text-decoration: none; color: inherit;">
-                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Al baqarah: 216</h2>
-                    </a>
-                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
-                        Feb 17, 2026 — <span class="cat-link">Religion</span> ◦ <span class="cat-link">Mind</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="post-item" data-category="Mind" style="display: flex; margin-bottom: 25px;">
-                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
-                <div class="post-content">
-                    <a href="posts/let-them.html" style="text-decoration: none; color: inherit;">
-                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Let Them</h2>
-                    </a>
-                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
-                        Feb 17, 2026 — <span class="cat-link">Mind</span>
-                    </div>
-                </div>
-            </div>
+#theme-toggle, .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--text);
+    padding: 10px;
+    position: relative;
+    z-index: 1001;
+}
 
-            <div class="post-item" data-category="Motivation" style="display: flex; margin-bottom: 25px;">
-                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
-                <div class="post-content">
-                    <a href="posts/belajar-konsisten.html" style="text-decoration: none; color: inherit;">
-                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Consistency</h2>
-                    </a>
-                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
-                        Feb 16, 2026 — <span class="cat-link">Motivation</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: var(--menu-bg);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid var(--border);
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.4s ease-in-out;
+    z-index: 1000;
+    list-style: none;
+}
 
-        <footer>
-            © 2026 Ahmad Zulpiqor. Built with simplicity.
-        </footer>
-    </div>
+.menu.active { right: 0; }
+.menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* --- Typography --- */
+h1 { 
+    font-size: 32px; 
+    font-weight: 700; 
+    text-align: center; /* Judul Today I Learned tetap di tengah */
+    margin: 10px 0 35px 0; 
+}
+
+/* Judul khusus di dalam artikel harian (rata kiri) */
+.post-header h1 {
+    text-align: left !important;
+    margin: 10px 0 10px 0;
+}
+
+.post-header {
+    text-align: left !important; 
+    margin-bottom: 30px;
+}
+
+.meta-detail {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* --- Blog Page Styles (Link & Filter) --- */
+.post-item { 
+    display: flex; 
+    margin-bottom: 25px; 
+    text-decoration: none; 
+    color: inherit; /* Menghilangkan warna biru link */
+}
+
+.post-item.hidden { 
+    display: none !important; 
+}
+
+.lang-label { 
+    min-width: 50px; 
+    color: var(--gray); 
+    font-size: 13px; 
+    margin-top: 5px; 
+}
+
+.post-content a {
+    text-decoration: none;
+    color: inherit; /* Judul artikel mengikuti warna tema */
+}
+
+.post-content h2 { 
+    font-size: 19px; 
+    font-weight: 500; 
+    margin-bottom: 4px; 
+    text-align: left !important; 
+}
+
+.post-item:hover h2 {
+    color: var(--accent); /* Interaksi saat di-hover */
+}
+
+.post-meta { 
+    font-size: 14px; 
+    color: var(--gray); 
+}
+
+.cat-link {
+    cursor: pointer;
+    color: var(--accent); /* Tag tetap berwarna agar menonjol */
+    font-weight: 500;
+}
+
+.cat-link:hover { 
+    text-decoration: underline; 
+}
+
+/* --- Tag Header ala Saugi --- */
+#tag-header {
+    display: none;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+#tag-header h1 {
+    text-align: left !important; /* Judul Tag: NamaTag di kiri */
+    margin: 0;
+    font-size: 32px;
+}
+
+.back-link-tag {
+    display: inline-block;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* --- Content Styling --- */
+.bio p, .content-body p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    margin-bottom: 20px;
+}
+
+.category-tag {
+    display: inline-block;
+    background-color: var(--border); 
+    color: var(--text);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* --- Footer --- */
+footer { 
+    margin-top: 80px; 
+    padding-top: 20px; 
+    border-top: 1px solid var(--border); 
+    font-size: 13px; 
+    color: var(--gray); 
+    text-align: center; 
+}
