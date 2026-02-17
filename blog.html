@@ -6,10 +6,42 @@
     <title>Today I Learned - Ahmad Zulpiqor</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .post-item.hidden { display: none; }
+        
+        /* Area Judul Tag ala Saugi */
+        #tag-header {
+            display: none;
+            margin-bottom: 35px;
+        }
+
+        #tag-header h1 {
+            text-align: left !important;
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .back-link-tag {
+            color: var(--accent);
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling agar teks kategori bisa diklik secara spesifik */
+        .cat-link {
+            cursor: pointer;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .cat-link:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <header id="main-header">
             <nav>
                 <button id="theme-toggle" title="Ubah Tema">🌙</button>
                 <div class="hamburger" id="hamburger">☰</div>
@@ -21,33 +53,38 @@
                     <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
                 </ul>
             </nav>
-            <h1>Today I Learned</h1>
+            <h1 id="page-title">Today I Learned</h1>
         </header>
-        
+
+        <div id="tag-header">
+            <span class="back-link-tag" id="reset-filter">← Back to all posts</span>
+            <h1 id="tag-title">Tag: Topic</h1>
+        </div>
+
         <div class="post-list">
-            <a href="posts/216.html" class="post-item">
-                <div class="lang-label">ID</div>
+            <div class="post-item" data-category="Religion Mind" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
                 <div class="post-content">
-                    <h2>Al baqarah: 216</h2>
-                    <div class="post-meta">Feb 17, 2026 — <span>Religion</span> ◦ <span>Mind</span> </div>
+                    <a href="posts/216.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Al baqarah: 216</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 17, 2026 — <span class="cat-link">Religion</span> ◦ <span class="cat-link">Mind</span>
+                    </div>
                 </div>
-            </a>
+            </div>
             
-            <a href="posts/let-them.html" class="post-item">
-                <div class="lang-label">ID</div>
+            <div class="post-item" data-category="Mind" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
                 <div class="post-content">
-                    <h2>Let Them</h2>
-                    <div class="post-meta">Feb 17, 2026 — <span>Mind</span></div>
+                    <a href="posts/let-them.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Let Them</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 17, 2026 — <span class="cat-link">Mind</span>
+                    </div>
                 </div>
-            </a>
-            
-            <a href="posts/belajar-konsisten.html" class="post-item">
-                <div class="lang-label">ID</div>
-                <div class="post-content">
-                    <h2>Consistency</h2>
-                    <div class="post-meta">Feb 16, 2026 — <span>Motivation</span></div>
-                </div>
-            </a>
+            </div>
         </div>
 
         <footer>
@@ -56,18 +93,50 @@
     </div>
 
     <script>
+        const posts = document.querySelectorAll('.post-item');
+        const mainHeader = document.getElementById('page-title');
+        const tagHeader = document.getElementById('tag-header');
+        const tagTitle = document.getElementById('tag-title');
+        const resetBtn = document.getElementById('reset-filter');
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
         const themeToggle = document.getElementById('theme-toggle');
 
-        // Logika Buka-Tutup Menu (Fix untuk HP)
+        // Logika Filter ala Saugi
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('cat-link')) {
+                const targetCategory = e.target.innerText.trim();
+                
+                posts.forEach(post => {
+                    const categories = post.getAttribute('data-category').split(' ');
+                    if (categories.includes(targetCategory)) {
+                        post.classList.remove('hidden');
+                    } else {
+                        post.classList.add('hidden');
+                    }
+                });
+
+                mainHeader.style.display = 'none';
+                tagHeader.style.display = 'block';
+                tagTitle.innerText = `Tag: ${targetCategory}`;
+                window.scrollTo(0, 0);
+            }
+        });
+
+        // Reset filter
+        resetBtn.addEventListener('click', () => {
+            posts.forEach(post => post.classList.remove('hidden'));
+            tagHeader.style.display = 'none';
+            mainHeader.style.display = 'block';
+        });
+
+        // Navigasi HP
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
             menu.classList.toggle('active');
             hamburger.innerHTML = menu.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Menutup menu jika klik di luar area menu
         document.addEventListener('click', (e) => {
             if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
                 menu.classList.remove('active');
@@ -75,7 +144,7 @@
             }
         });
 
-        // Logika Mode Gelap
+        // Tema Gelap
         themeToggle.addEventListener('click', () => {
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
@@ -83,7 +152,6 @@
             localStorage.setItem('theme', isDark ? 'light' : 'dark');
         });
 
-        // Load tema tersimpan
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
