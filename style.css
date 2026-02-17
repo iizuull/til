@@ -71,19 +71,43 @@ nav {
     gap: 25px;
     transition: 0.4s ease-in-out;
     z-index: 1000;
-    list-style: none; /* Menghapus titik-titik menu */
+    list-style: none;
 }
 
 .menu.active { right: 0; }
-.menu li { list-style: none; } /* Memastikan bullets hilang */
+.menu li { list-style: none; }
 .menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
-/* --- Typography --- */
+/* --- Typography & Header (Fixed ala Saugi) --- */
 h1 { 
     font-size: 32px; 
     font-weight: 700; 
-    text-align: center; 
-    margin: 10px 0 35px 0; 
+    text-align: left !important; /* Diubah ke kiri agar mirip saugi */
+    margin: 10px 0 15px 0; 
+}
+
+.post-header {
+    text-align: left !important; /* Area header rata kiri */
+    margin-bottom: 30px;
+}
+
+.meta-detail {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* --- Category Tag (Kotak Abu-abu Ala Saugi) --- */
+.category-tag {
+    display: inline-block;
+    background-color: var(--border); /* Warna kotak abu-abu */
+    color: var(--text);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 5px;
 }
 
 .bio p, .content-body p {
@@ -104,16 +128,14 @@ h1 {
 /* --- Blog Page Styles --- */
 .post-item { display: flex; margin-bottom: 25px; text-decoration: none; color: inherit; }
 .lang-label { min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px; }
-.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; }
+.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; text-align: left !important; }
 .post-meta { font-size: 14px; color: var(--gray); }
 
-/* Menambahkan warna biru pada kategori blog */
 .post-meta span {
     color: var(--accent);
     font-weight: 500;
 }
 
-/* Style Tombol Kembali ke Blog agar lebih cantik */
 .back-link {
     display: inline-block;
     text-decoration: none;
