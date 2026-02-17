@@ -168,3 +168,44 @@ footer {
     color: var(--gray); 
     text-align: center; 
 }
+/* --- Style Khusus Filter Tag ala Saugi --- */
+.post-item.hidden { 
+    display: none !important; 
+}
+
+#tag-header {
+    display: none;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.back-link-tag {
+    display: inline-block;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.back-link-tag:hover { 
+    color: var(--accent); 
+}
+
+#tag-header h1 {
+    text-align: left !important;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.cat-link {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.cat-link:hover { 
+    text-decoration: underline; 
+}
