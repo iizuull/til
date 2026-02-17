@@ -6,6 +6,13 @@
     <title>Consistency - Ahmad Zulpiqor</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <script>
+        /* SCRIPT INI HARUS DI HEAD AGAR MODE GELAP TIDAK FLASH PUTIH SAAT DI-REFRESH */
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
