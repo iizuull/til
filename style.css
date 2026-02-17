@@ -31,72 +31,145 @@ body {
 .container { 
     max-width: 650px; 
     margin: 0 auto; 
-    padding: 20px 25px 40px 25px; 
+    padding: 20px 25px 40px 25px; /* Jarak samping HP agar rata */
 }
+
+/* --- Navigasi --- */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0px;
+}
+
+#theme-toggle, .hamburger {
+    background: none; border: none; cursor: pointer;
+    font-size: 22px; color: var(--text); padding: 10px;
+    position: relative; z-index: 1001;
+}
+
+.menu {
+    position: fixed; top: 0; right: -100%;
+    width: 250px; height: 100%;
+    background: var(--menu-bg); backdrop-filter: blur(10px);
+    border-left: 1px solid var(--border);
+    padding: 80px 40px;
+    display: flex; flex-direction: column; gap: 25px;
+    transition: 0.4s ease-in-out; z-index: 1000;
+    list-style: none; /* Menghilangkan titik-titik menu */
+}
+
+.menu.active { right: 0; }
+.menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
 /* --- Typography (Nama Ahmad Zulpiqor) --- */
 h1 { 
     font-size: 32px; 
-    font-weight: 800 !important; /* Paksa Bold Maksimal */
+    font-weight: 800 !important; /* Nama Bold Maksimal */
     text-align: center !important; 
     margin: 10px 0 35px 0; 
-    letter-spacing: -0.5px;
 }
 
+/* Judul khusus di dalam artikel harian (rata kiri) */
 .post-header h1 {
     text-align: left !important;
-    margin: 15px 0 10px 0;
+    margin: 10px 0 10px 0;
     font-weight: 700 !important;
 }
 
-/* --- Anti-Biru untuk Semua Judul di Daftar Blog --- */
-.post-item { text-decoration: none !important; margin-bottom: 25px; display: flex; }
-
-.post-content a, .post-content a:visited, .post-content a:active {
-    text-decoration: none !important;
-    color: var(--text) !important; /* Kunci warna teks utama */
+.post-header {
+    text-align: left !important; 
+    margin-bottom: 30px;
 }
 
-.post-content h2 { font-size: 19px; font-weight: 600; text-align: left !important; }
+/* --- Blog Page Styles (Anti-Biru & Statis) --- */
+.post-item { 
+    display: flex; 
+    margin-bottom: 25px; 
+    text-decoration: none !important; 
+    color: inherit; 
+}
 
-/* --- Tombol Kembali (Kunci Warna Abu-Abu) --- */
-.back-link, .back-link:visited, .back-link:active {
+.post-item.hidden { display: none !important; }
+
+/* Kunci warna agar judul artikel TIDAK biru/ungu */
+.post-content a, .post-content a:visited, .post-content a:active, .post-content a:link {
+    text-decoration: none !important;
+    color: var(--text) !important; 
+}
+
+.post-content h2 { 
+    font-size: 19px; font-weight: 600; 
+    margin-bottom: 4px; text-align: left !important; 
+}
+
+.post-item:hover h2 { color: var(--accent); }
+
+.post-meta { font-size: 14px; color: var(--gray); }
+
+/* Tag tetap berwarna agar menonjol */
+.cat-link {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.cat-link:hover { text-decoration: underline; }
+
+/* --- Tag Header ala Saugi (Fungsi Filter) --- */
+#tag-header {
+    display: none;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+#tag-header h1 {
+    text-align: left !important;
+    margin: 0;
+    font-size: 32px;
+}
+
+.back-link-tag {
+    display: inline-block;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* --- Content Styling (Rata Kanan Kiri & Jarak Lega) --- */
+.bio p, .content-body p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    hyphens: auto; -webkit-hyphens: auto;
+    margin-bottom: 25px;
+}
+
+/* Tombol Kembali (Kunci Abu-Abu) */
+.back-link, .back-link:visited {
     display: inline-block;
     text-decoration: none !important;
-    color: var(--gray) !important; /* Paksa abu-abu walau sudah diklik */
+    color: var(--gray) !important;
     font-size: 14px;
     margin-bottom: 30px;
 }
 
-.back-link:hover { color: var(--accent) !important; }
-
-/* --- Isi Konten (Rata Kanan Kiri Rapi HP) --- */
-.bio p, .content-body p {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    margin-bottom: 25px;
-}
-
-/* --- Jarak Topik ke Teks --- */
 .category-tag {
     display: inline-block;
-    background-color: var(--border) !important;
-    color: var(--text) !important;
+    background-color: var(--border); 
+    color: var(--text);
     padding: 6px 14px;
     border-radius: 6px;
     font-size: 13px;
     font-weight: 500;
-    margin-bottom: 40px; /* Jarak agar tidak menempel */
+    margin-bottom: 45px; /* JARAK TOPIK KE TEKS */
 }
 
 /* --- Footer --- */
 footer { 
-    margin-top: 80px; 
-    padding: 20px 0; 
+    margin-top: 80px; padding-top: 20px; 
     border-top: 1px solid var(--border); 
-    font-size: 13px; 
-    color: var(--gray); 
-    text-align: center; 
+    font-size: 13px; color: var(--gray); text-align: center; 
 }
