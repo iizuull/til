@@ -1,130 +1,166 @@
-/* --- Root Variables & Themes --- */
-:root {
-    --bg: #ffffff;
-    --text: #111827;
-    --gray: #6b7280;
-    --border: #f3f4f6;
-    --accent: #4f46e5;
-    --menu-bg: rgba(255, 255, 255, 0.98);
-}
+kembalikan sebelum ini <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Today I Learned - Ahmad Zulpiqor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .post-item.hidden { display: none; }
+        
+        #tag-header {
+            display: none;
+            margin-bottom: 35px;
+        }
 
-[data-theme="dark"] {
-    --bg: #111827;
-    --text: #f9fafb;
-    --gray: #9ca3af;
-    --border: #1f2937;
-    --accent: #818cf8;
-    --menu-bg: rgba(17, 24, 39, 0.98);
-}
+        #tag-header h1 {
+            text-align: left !important;
+            margin: 0;
+            font-size: 32px;
+        }
 
-/* --- Global Reset --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+        .back-link-tag {
+            color: var(--accent);
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    transition: background 0.3s, color 0.3s;
-}
+        .cat-link {
+            cursor: pointer;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .cat-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="main-header">
+            <nav>
+                <button id="theme-toggle" title="Ubah Tema">🌙</button>
+                <div class="hamburger" id="hamburger">☰</div>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="blog.html">Today I Learned</a></li>
+                    <li><a href="https://www.instagram.com/iizuull__">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/username-kamu">Linkedin</a></li>
+                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
+                </ul>
+            </nav>
+            <h1 id="page-title">Today I Learned</h1>
+        </header>
 
-.container { 
-    max-width: 650px; 
-    margin: 0 auto; 
-    padding: 20px 25px 40px 25px; 
-}
+        <div id="tag-header">
+            <span class="back-link-tag" id="reset-filter">← Back to all posts</span>
+            <h1 id="tag-title">Tag: Topic</h1>
+        </div>
 
-/* --- Navigasi --- */
-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 15px;
-}
+        <div class="post-list">
+            <div class="post-item" data-category="Religion Mind" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/216.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Al baqarah: 216</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 17, 2026 — <span class="cat-link">Religion</span> ◦ <span class="cat-link">Mind</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-item" data-category="Mind" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/let-them.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Let Them</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 17, 2026 — <span class="cat-link">Mind</span>
+                    </div>
+                </div>
+            </div>
 
-#theme-toggle, .hamburger {
-    background: none; border: none; cursor: pointer;
-    font-size: 22px; color: var(--text); padding: 10px;
-    position: relative; z-index: 1001;
-}
+            <div class="post-item" data-category="Motivation" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/belajar-konsisten.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Consistency</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 16, 2026 — <span class="cat-link">Motivation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.menu {
-    position: fixed; top: 0; right: -100%;
-    width: 250px; height: 100%;
-    background: var(--menu-bg); backdrop-filter: blur(10px);
-    border-left: 1px solid var(--border);
-    padding: 80px 40px;
-    display: flex; flex-direction: column; gap: 25px;
-    transition: 0.4s ease-in-out; z-index: 1000;
-    list-style: none; /* Menghilangkan titik menu */
-}
+        <footer>
+            © 2026 Ahmad Zulpiqor. Built with simplicity.
+        </footer>
+    </div>
 
-.menu.active { right: 0; }
-.menu a { text-decoration: none; color: var(--text) !important; font-size: 18px; font-weight: 500; }
+    <script>
+        const posts = document.querySelectorAll('.post-item');
+        const mainHeader = document.getElementById('page-title');
+        const tagHeader = document.getElementById('tag-header');
+        const tagTitle = document.getElementById('tag-title');
+        const resetBtn = document.getElementById('reset-filter');
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+        const themeToggle = document.getElementById('theme-toggle');
 
-/* --- Typography (Nama & Judul Today I Learned) --- */
-h1 { 
-    font-size: 32px; 
-    font-weight: 800 !important; /* Nama Bold Maksimal */
-    text-align: center !important; 
-    margin: 10px 0 35px 0; 
-}
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('cat-link')) {
+                const targetCategory = e.target.innerText.trim();
+                posts.forEach(post => {
+                    const categories = post.getAttribute('data-category').split(' ');
+                    if (categories.includes(targetCategory)) {
+                        post.classList.remove('hidden');
+                    } else {
+                        post.classList.add('hidden');
+                    }
+                });
+                mainHeader.style.display = 'none';
+                tagHeader.style.display = 'block';
+                tagTitle.innerText = `Tag: ${targetCategory}`;
+                window.scrollTo(0, 0);
+            }
+        });
 
-/* Judul artikel harian (rata kiri) */
-.post-header h1 {
-    text-align: left !important;
-    margin: 10px 0 10px 0;
-    font-weight: 700 !important;
-}
+        resetBtn.addEventListener('click', () => {
+            posts.forEach(post => post.classList.remove('hidden'));
+            tagHeader.style.display = 'none';
+            mainHeader.style.display = 'block';
+        });
 
-/* --- Daftar Blog (Anti-Biru & Statis) --- */
-.post-item { text-decoration: none !important; }
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+            hamburger.innerHTML = menu.classList.contains('active') ? '✕' : '☰';
+        });
 
-/* Kunci warna judul agar tidak pernah biru/ungu */
-.post-content a, .post-content a:visited, .post-content a:active, .post-content a:link {
-    text-decoration: none !important;
-    color: var(--text) !important; 
-}
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('active');
+                hamburger.innerHTML = '☰';
+            }
+        });
 
-.post-content h2 { 
-    font-size: 19px; font-weight: 600; 
-    margin-bottom: 4px; text-align: left !important; 
-}
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = isDark ? '🌙' : '☀️';
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        });
 
-/* --- Isi Konten & Bio (Rata Kanan Kiri HP) --- */
-.bio p, .content-body p {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    hyphens: auto; -webkit-hyphens: auto;
-    margin-bottom: 25px;
-}
-
-/* Tombol Kembali (Kunci Abu-Abu Bersih) */
-.back-link, .back-link:visited, .back-link-tag {
-    display: inline-block;
-    text-decoration: none !important;
-    color: var(--gray) !important;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-
-.back-link:hover, .back-link-tag:hover { color: var(--accent) !important; }
-
-/* Category Tag & Jarak */
-.category-tag {
-    display: inline-block;
-    background-color: var(--border) !important;
-    color: var(--text) !important;
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 45px; /* JARAK TOPIK KE TEKS */
-}
-
-/* --- Footer --- */
-footer { 
-    margin-top: 80px; padding: 20px 0; 
-    border-top: 1px solid var(--border); 
-    font-size: 13px; color: var(--gray); text-align: center; 
-}
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '☀️';
+        }
+    </script>
+</body>
+</html>
