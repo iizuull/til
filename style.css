@@ -54,8 +54,8 @@ nav {
     font-size: 22px;
     color: var(--text);
     padding: 10px;
-    position: relative; /* Agar z-index bekerja */
-    z-index: 1001;      /* Harus lebih tinggi dari .menu yang 1000 agar bisa diklik di HP */
+    position: relative;
+    z-index: 1001;
 }
 
 .menu {
@@ -72,7 +72,7 @@ nav {
     flex-direction: column;
     gap: 25px;
     transition: 0.4s ease-in-out;
-    z-index: 1000; /* Menu di lapisan bawah tombol hamburger */
+    z-index: 1000;
     list-style: none;
 }
 
@@ -80,12 +80,20 @@ nav {
 .menu li { list-style: none; }
 .menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
-/* --- Typography & Header (Fixed ala Saugi) --- */
+/* --- Typography --- */
+
+/* Judul Utama (Untuk Nama di Halaman Depan) */
 h1 { 
     font-size: 32px; 
     font-weight: 700; 
-    text-align: left !important; 
-    margin: 10px 0 15px 0; 
+    text-align: center; /* Nama Ahmad Zulpiqor kembali ke tengah */
+    margin: 10px 0 35px 0; 
+}
+
+/* Judul Khusus Postingan Blog (Tetap di Kiri ala Saugi) */
+.post-header h1 {
+    text-align: left !important;
+    margin: 10px 0 10px 0;
 }
 
 .post-header {
