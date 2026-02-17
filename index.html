@@ -4,91 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmad Zulpiqor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <nav>
-                <button id="theme-toggle" title="Ubah Tema">🌙</button>
-                
-                <div class="hamburger" id="hamburger">☰</div>
+        <nav>
+            <button id="theme-toggle">🌙</button>
+            <div class="hamburger" id="hamburger">☰</div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html">About</a></li>
+                <li><a href="blog.html">Today I Learned</a></li>
+                <li><a href="https://www.instagram.com/iizuull__">Instagram</a></li>
+                <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
+            </ul>
+        </nav>
 
-                <ul class="menu" id="menu">
-                    <li><a href="index.html">About Me</a></li>
-                    <li><a href="blog.html">Today I Learned</a></li>
-                    <li><a href="https://www.instagram.com/iizuull__">Instagram</a></li>
-                    <li><a href="https://www.linkedin.com/in/username-kamu" target="_blank">LinkedIn</a></li>
-                    <li><a href="mailto:ahmadzulpiqor@mail.ugm.ac.id">Contact</a></li>
-                </ul>
-            </nav>
-            <h1>Ahmad Zulpiqor</h1>
-        </header>
+        <h1>Ahmad Zulpiqor</h1>
 
-        <main class="bio">
-            <p>
-                Halo! saya <span class="highlight">Ahmad Zulpiqor</span>, biasa dipanggil <span class="highlight">Zul</span>. Saat ini saya adalah mahasiswa Arkeologi di Universitas Gadjah Mada.
-            </p>
-            <p>
-                Saya termasuk pribadi yang introvert—lebih nyaman mengamati, membaca, dan memproses banyak hal secara perlahan sebelum berbicara. Karena itu, menulis menjadi cara paling jujur bagi saya untuk berpikir dengan lebih teratur dan memahami sesuatu dengan lebih dalam.
-            </p>
-            <p>
-                Di luar aktivitas akademik, saya juga bekerja sebagai freelancer di <span class="highlight">G2G Global</span>. Saya juga mengisi waktu dengan membaca buku, memotret, dan sangat menikmati kegiatan traveling untuk mencari ketenangan sekaligus mengeksplorasi perspektif baru di setiap perjalanan.
-            </p>
-            <p>
-                Website ini saya buat sebagai ruang dokumentasi pribadi. Khususnya melalui bagian <a href="blog.html" class="highlight" style="text-decoration: underline;">Today I Learned</a>, saya menantang diri untuk menulis setiap hari tentang apa yang saya pelajari.
-            </p>
-            <p>
-                Tujuan utama dari ruang ini bukan untuk terlihat sempurna, melainkan untuk membangun konsistensi, memperjelas cara berpikir, dan merekam perjalanan belajar saya dari waktu ke waktu.
-            </p>
-        </main>
+        <div class="bio">
+            <p>Halo! saya <strong>Ahmad Zulpiqor</strong>, biasa dipanggil <strong>Zul</strong>. Saat ini saya adalah mahasiswa Arkeologi di Universitas Gadjah Mada.</p>
+            <p>Website ini saya buat sebagai ruang dokumentasi pribadi. Khususnya melalui bagian <a href="blog.html">Today I Learned</a>, saya menantang diri untuk menulis setiap hari tentang apa yang saya pelajari.</p>
+        </div>
 
-        <footer>
-            © 2026 Ahmad Zulpiqor. Built with simplicity.
-        </footer>
+        <footer>© 2026 Ahmad Zulpiqor. Built with simplicity.</footer>
     </div>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
-        const themeToggle = document.getElementById('theme-toggle');
-
-        // 1. Logika Buka-Tutup Menu (Fix untuk HP)
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation(); // Mencegah klik 'tembus' ke latar belakang agar menu tidak langsung tutup
-            menu.classList.toggle('active');
-            hamburger.innerHTML = menu.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // 2. Menutup menu jika klik di mana saja di luar area menu
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-                menu.classList.remove('active');
-                hamburger.innerHTML = '☰';
-            }
-        });
-
-        // 3. Logika Mode Gelap
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                themeToggle.innerHTML = '🌙';
-                localStorage.setItem('theme', 'light');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeToggle.innerHTML = '☀️';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // 4. Memuat tema yang tersimpan
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeToggle.innerHTML = '☀️';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
