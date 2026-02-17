@@ -77,20 +77,17 @@ nav {
 }
 
 .menu.active { right: 0; }
-.menu li { list-style: none; }
 .menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
 /* --- Typography --- */
-
-/* Judul Utama (Untuk Nama di Halaman Depan) */
 h1 { 
     font-size: 32px; 
     font-weight: 700; 
-    text-align: center; /* Nama Ahmad Zulpiqor kembali ke tengah */
+    text-align: center; /* Judul Today I Learned tetap di tengah */
     margin: 10px 0 35px 0; 
 }
 
-/* Judul Khusus Postingan Blog (Tetap di Kiri ala Saugi) */
+/* Judul khusus di dalam artikel harian (rata kiri) */
 .post-header h1 {
     text-align: left !important;
     margin: 10px 0 10px 0;
@@ -108,7 +105,85 @@ h1 {
     display: block;
 }
 
-/* --- Category Tag (Kotak Abu-abu Ala Saugi) --- */
+/* --- Blog Page Styles (Link & Filter) --- */
+.post-item { 
+    display: flex; 
+    margin-bottom: 25px; 
+    text-decoration: none; 
+    color: inherit; /* Menghilangkan warna biru link */
+}
+
+.post-item.hidden { 
+    display: none !important; 
+}
+
+.lang-label { 
+    min-width: 50px; 
+    color: var(--gray); 
+    font-size: 13px; 
+    margin-top: 5px; 
+}
+
+.post-content a {
+    text-decoration: none;
+    color: inherit; /* Judul artikel mengikuti warna tema */
+}
+
+.post-content h2 { 
+    font-size: 19px; 
+    font-weight: 500; 
+    margin-bottom: 4px; 
+    text-align: left !important; 
+}
+
+.post-item:hover h2 {
+    color: var(--accent); /* Interaksi saat di-hover */
+}
+
+.post-meta { 
+    font-size: 14px; 
+    color: var(--gray); 
+}
+
+.cat-link {
+    cursor: pointer;
+    color: var(--accent); /* Tag tetap berwarna agar menonjol */
+    font-weight: 500;
+}
+
+.cat-link:hover { 
+    text-decoration: underline; 
+}
+
+/* --- Tag Header ala Saugi --- */
+#tag-header {
+    display: none;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+#tag-header h1 {
+    text-align: left !important; /* Judul Tag: NamaTag di kiri */
+    margin: 0;
+    font-size: 32px;
+}
+
+.back-link-tag {
+    display: inline-block;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* --- Content Styling --- */
+.bio p, .content-body p {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+    margin-bottom: 20px;
+}
+
 .category-tag {
     display: inline-block;
     background-color: var(--border); 
@@ -117,46 +192,6 @@ h1 {
     border-radius: 6px;
     font-size: 13px;
     font-weight: 500;
-    margin-top: 5px;
-}
-
-.bio p, .content-body p {
-    text-align: justify !important;
-    text-justify: inter-word !important;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    margin-bottom: 20px;
-}
-
-.highlight, b, strong {
-    background: none !important;
-    color: var(--text);
-    font-weight: 700;
-    padding: 0;
-}
-
-/* --- Blog Page Styles --- */
-.post-item { display: flex; margin-bottom: 25px; text-decoration: none; color: inherit; }
-.lang-label { min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px; }
-.post-content h2 { font-size: 19px; font-weight: 500; margin-bottom: 4px; text-align: left !important; }
-.post-meta { font-size: 14px; color: var(--gray); }
-
-.post-meta span {
-    color: var(--accent);
-    font-weight: 500;
-}
-
-.back-link {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--gray);
-    font-size: 14px;
-    margin-bottom: 30px;
-    transition: color 0.2s;
-}
-
-.back-link:hover {
-    color: var(--accent);
 }
 
 /* --- Footer --- */
@@ -167,45 +202,4 @@ footer {
     font-size: 13px; 
     color: var(--gray); 
     text-align: center; 
-}
-/* --- Style Khusus Filter Tag ala Saugi --- */
-.post-item.hidden { 
-    display: none !important; 
-}
-
-#tag-header {
-    display: none;
-    margin-bottom: 35px;
-    text-align: left;
-}
-
-.back-link-tag {
-    display: inline-block;
-    color: var(--gray);
-    text-decoration: none;
-    font-size: 14px;
-    margin-bottom: 15px;
-    transition: color 0.2s;
-    cursor: pointer;
-}
-
-.back-link-tag:hover { 
-    color: var(--accent); 
-}
-
-#tag-header h1 {
-    text-align: left !important;
-    margin: 0;
-    font-size: 32px;
-    font-weight: 700;
-}
-
-.cat-link {
-    cursor: pointer;
-    color: var(--accent);
-    font-weight: 500;
-}
-
-.cat-link:hover { 
-    text-decoration: underline; 
 }
