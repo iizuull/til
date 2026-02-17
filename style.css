@@ -22,20 +22,20 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    transition: background 0.3s, color 0.3s; 
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    line-height: 1.6; /* Sedikit lebih rapat agar justify lebih mudah bekerja */
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
 }
 
 .container { 
     max-width: 650px; 
     margin: 0 auto; 
-    padding: 10px 15px 40px 15px; /* Margin samping diperkecil di HP */
+    padding: 5px 20px 40px 20px; 
 }
 
 /* --- Navigasi --- */
@@ -43,7 +43,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 0px;
 }
 
@@ -71,39 +71,38 @@ nav {
     gap: 25px;
     transition: 0.4s ease-in-out;
     z-index: 1000;
-    list-style: none;
 }
 
 .menu.active { right: 0; }
-.menu a { text-decoration: none; color: var(--text); font-size: 18px; }
+.menu a { text-decoration: none; color: var(--text); font-size: 18px; font-weight: 500; }
 
-/* --- Typography (PEMAKSAAN SEJAJAR) --- */
+/* --- Typography (Nama & Perataan Teks) --- */
 h1 { 
-    font-size: 28px; /* Sedikit lebih kecil agar naik */
+    font-size: 32px; 
     font-weight: 700; 
     text-align: center; 
-    margin: 5px 0 25px 0; 
+    margin: 10px 0 35px 0; 
 }
 
+/* KUNCI: Rata Kanan-Kiri Full di HP & Laptop */
 .bio p, .content-body p {
-    display: block;
-    width: 100%;
-    text-align: justify !important; /* Paksa Sejajar */
-    text-justify: distribute; /* Teknik tambahan untuk HP */
+    text-align: justify !important;
+    text-justify: inter-word !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
-.highlight {
-    background-color: var(--border);
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-weight: 500;
+/* MENGHAPUS SHADOW/KOTAK PADA TEKS BOLD */
+.highlight, b, strong {
+    background: none !important; /* Menghapus kotak abu-abu/shadow */
+    color: var(--text);
+    font-weight: 700;
+    padding: 0;
 }
 
-/* --- Blog List & Footer --- */
+/* --- Post List & Footer --- */
 .post-item { display: flex; margin-bottom: 25px; text-decoration: none; color: inherit; }
-.lang-label { min-width: 45px; color: var(--gray); font-size: 13px; }
-.post-content h2 { font-size: 18px; font-weight: 500; }
-footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; text-align: center; color: var(--gray); }
+.lang-label { min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px; }
+.post-content h2 { font-size: 19px; font-weight: 500; }
+footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--gray); text-align: center; }
