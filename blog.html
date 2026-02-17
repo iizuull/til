@@ -9,7 +9,6 @@
     <style>
         .post-item.hidden { display: none; }
         
-        /* Area Judul Tag ala Saugi */
         #tag-header {
             display: none;
             margin-bottom: 35px;
@@ -30,7 +29,6 @@
             margin-bottom: 10px;
         }
 
-        /* Styling agar teks kategori bisa diklik secara spesifik */
         .cat-link {
             cursor: pointer;
             color: var(--accent);
@@ -85,6 +83,18 @@
                     </div>
                 </div>
             </div>
+
+            <div class="post-item" data-category="Motivation" style="display: flex; margin-bottom: 25px;">
+                <div class="lang-label" style="min-width: 50px; color: var(--gray); font-size: 13px; margin-top: 5px;">ID</div>
+                <div class="post-content">
+                    <a href="posts/belajar-konsisten.html" style="text-decoration: none; color: inherit;">
+                        <h2 style="font-size: 19px; font-weight: 500; margin-bottom: 4px;">Consistency</h2>
+                    </a>
+                    <div class="post-meta" style="font-size: 14px; color: var(--gray);">
+                        Feb 16, 2026 — <span class="cat-link">Motivation</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -102,11 +112,9 @@
         const menu = document.getElementById('menu');
         const themeToggle = document.getElementById('theme-toggle');
 
-        // Logika Filter ala Saugi
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('cat-link')) {
                 const targetCategory = e.target.innerText.trim();
-                
                 posts.forEach(post => {
                     const categories = post.getAttribute('data-category').split(' ');
                     if (categories.includes(targetCategory)) {
@@ -115,7 +123,6 @@
                         post.classList.add('hidden');
                     }
                 });
-
                 mainHeader.style.display = 'none';
                 tagHeader.style.display = 'block';
                 tagTitle.innerText = `Tag: ${targetCategory}`;
@@ -123,14 +130,12 @@
             }
         });
 
-        // Reset filter
         resetBtn.addEventListener('click', () => {
             posts.forEach(post => post.classList.remove('hidden'));
             tagHeader.style.display = 'none';
             mainHeader.style.display = 'block';
         });
 
-        // Navigasi HP
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
             menu.classList.toggle('active');
@@ -144,7 +149,6 @@
             }
         });
 
-        // Tema Gelap
         themeToggle.addEventListener('click', () => {
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
