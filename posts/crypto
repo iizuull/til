@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Cryptocurrency - Ahmad Zulpiqor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../blog.html" class="back-link">← Kembali ke Blog</a>
+        
+        <header class="post-header">
+            <div class="meta-detail">Published February 18, 2026</div>
+            <h1>Mengenal Cryptocurrency: Antara Efisiensi Global dan Risiko Fluktuasi</h1>
+            <div style="display: flex; gap: 8px; margin-top: 5px;">
+                <div class="category-tag">Technology</div> 
+                <div class="category-tag">Finance</div>
+            </div>
+        </header>
 
+        <article class="content-body">
+            <p>
+                Bagi sebagian orang, istilah <i>cryptocurrency</i> mungkin sudah tidak asing lagi. Secara sederhana, ini adalah mata uang digital yang beroperasi di atas teknologi <b>blockchain</b> dengan sistem <i>peer-to-peer</i>.
+            </p>
+
+            <p>
+                Sejarahnya dimulai dari Bitcoin, aset kripto pertama yang diperkenalkan oleh sosok anonim bernama <b>Satoshi Nakamoto</b>. Awalnya, Bitcoin dirancang sebagai sistem pembayaran terdesentralisasi yang memungkinkan transaksi langsung tanpa perantara pihak ketiga. Namun kini, fungsinya banyak bergeser menjadi instrumen investasi maupun perdagangan digital.
+            </p>
+
+            <h3>Pengalaman Pertama di Masa Pandemi</h3>
+            <p>
+                Perkenalan saya dengan dunia kripto bermula pada tahun 2020 saat pandemi COVID-19 melanda. Sebagai seorang <i>freelancer</i> di industri <i>gaming</i>, saya merasakan langsung betapa masifnya penggunaan mata uang ini untuk transaksi lintas negara. 
+            </p>
+            <p>
+                Dari sisi teknologi, pengalaman ini sangat memuaskan. Kita bisa bertransaksi dengan siapa saja hanya dengan mengirimkan alamat <i>wallet</i>. Keunggulan utamanya adalah absennya batasan geografis; kita bisa mengirim aset ke seluruh penjuru dunia dalam waktu singkat.
+            </p>
+
+            <h3>Sisi Gelap: Volatilitas dan Keamanan</h3>
+            <p>
+                Namun, di balik kemudahannya, <i>cryptocurrency</i> menyimpan tantangan besar. <span class="highlight">Pergerakan grafik harga sangat sulit ditebak dan sangat fluktuatif.</span> Fenomena "kaya mendadak" atau "jatuh miskin seketika" bukanlah isapan jempol semata bagi mereka yang tidak berhati-hati.
+            </p>
+            <p>
+                Selain risiko finansial, sifat anonimitasnya juga sering disalahgunakan untuk praktik ilegal di <i>black market</i>, termasuk perjudian dan skema penipuan (<i>scam</i>). Inovasi ini menawarkan efisiensi luar biasa, namun tetap menuntut pemahaman mendalam sebelum terjun ke dalamnya.
+            </p>
+        </article>
+
+        <footer>
+            © 2026 Ahmad Zulpiqor. Built with simplicity.
+        </footer>
+    </div>
+</body>
+</html>
