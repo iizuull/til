@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waspada Penipuan Media Sosial - Ahmad Zulpiqor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../blog.html" class="back-link">← Kembali ke Blog</a>
+        
+        <header class="post-header">
+            <div class="meta-detail">Published February 24, 2026</div>
+            <h1>Don't Get Scammed</h1>
+            <div style="display: flex; gap: 8px; margin-top: 5px;">
+                <div class="category-tag">Safety</div>
+                <div class="category-tag">Mind</div>
+            </div>
+        </header>
+
+        <article class="content-body">
+            <p>
+                Begitu maraknya penipuan yang terjadi di media sosial saat ini, bahkan jumlahnya seolah tak terhitung setiap harinya. Media sosial yang seharusnya menjadi tempat kita berinteraksi, kini banyak disalahgunakan oleh oknum tidak bertanggung jawab sebagai ladang penipuan. Aku sendiri pernah mengalami kejadian tidak mengenakkan, dan baru-baru ini, kakakku menjadi korban <i>scam</i> saat mencoba membeli barang elektronik melalui salah satu platform media sosial.
+            </p>
+            <p>
+                Kejadian yang menimpa kakakku membuat aku ingin menulis ini. Nominal yang hilang lumayan besar dan melihat seseorang kehilangan hasil jerih payahnya hanya karena dikelabui dengan sangat mudah adalah hal yang sangat menyakitkan. Rasanya sangat tidak adil ketika ada orang yang mendapatkan uang dengan cara licik sementara korbannya harus bekerja keras untuk mendapatkannya. Mungkin sebagian pelaku tidak lagi memiliki rasa takut akan hukum atau Tuhan, tetapi bagi kita, kerugian ini bukan hanya soal materi, tapi juga tentang hilangnya rasa percaya pada sesama.
+            </p>
+            <p>
+                Di Indonesia, tingkat literasi digital masih menjadi tantangan besar. Berdasarkan data dari <b>Global Anti-Scam Alliance (GASA)</b>, Indonesia berada di posisi yang cukup mengkhawatirkan terkait kasus penipuan digital. Agar kejadian serupa tidak terulang, berikut adalah langkah konkret yang harus kita pegang teguh:
+            </p>
+            
+            <p>
+                <strong>1. Jangan Keluar dari Sistem Pihak Ketiga</strong><br>
+                Pastikan transaksi dilakukan melalui <i>marketplace</i> resmi. Pihak ketiga berfungsi sebagai penjamin; uangmu tidak akan diteruskan ke penjual sebelum barang diterima. Hindari transfer langsung via bank kecuali kamu melakukan COD (<i>Cash on Delivery</i>).
+            </p>
+
+            <p>
+                <strong>2. Waspadai Taktik "Mendesak" (Social Engineering)</strong><br>
+                Penipu sering membuatmu merasa terburu-buru agar tidak sempat berpikir jernih. Contohnya yang dialami kakakku: pelaku berpura-pura menjadi kurir yang meminta transfer biaya asuransi mendesak agar barang segera dikirim. Ingat, kurir resmi tidak pernah meminta uang secara pribadi di luar sistem aplikasi. Jangan biarkan dirimu terkena "genjutsu" seperti ini.
+            </p>
+
+            <p>
+                <strong>3. Filter Harga yang "Too Good to be True"</strong><br>
+                Jika menemukan barang atau <i>top-up</i> dengan harga jauh di bawah pasar, segera curiga. Penipu menggunakan harga murah sebagai umpan. Tidak ada barang bagus yang harganya tidak masuk akal. Selalu bandingkan harga di toko resmi sebelum membeli.
+            </p>
+
+            <p>
+                <strong>4. Verifikasi Identitas dan Rekening Digital</strong><br>
+                Gunakan fasilitas <b>CekRekening.id</b> dari Kominfo untuk melihat apakah nomor rekening tersebut pernah dilaporkan. Gunakan juga aplikasi pelacak nomor telepon untuk melihat riwayat laporan orang lain. Jika ada label "Penipu", segera blokir.
+            </p>
+
+            <p>
+                Kejahatan digital bisa menyerang siapa saja. Di dunia maya yang serba cepat, kehati-hatian adalah satu-satunya tameng kita. Jangan biarkan orang lain merampas hasil kerja kerasmu dengan cara yang licik.
+            </p>
+        </article>
+
+        <div class="sources" style="font-size: 12px; color: var(--gray); border-top: 1px solid var(--border); padding-top: 15px; margin-top: 30px;">
+            <p><strong>Sumber Referensi:</strong></p>
+            <ul>
+                <li>Kementerian Komunikasi dan Informatika RI. <i>Layanan CekRekening.id</i>.</li>
+                <li>Global Anti-Scam Alliance (GASA). <i>The State of Scams in Indonesia Report</i>.</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2026 Ahmad Zulpiqor. Built with simplicity.
+        </footer>
+    </div>
+</body>
+</html>
